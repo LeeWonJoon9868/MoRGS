@@ -1,7 +1,9 @@
 # MoRGS: Efficient Per-Gaussian Motion Reasoning for Streamable Dynamic 3D Scenes
-### [Project Page]([https://sungmin-woo.github.io/prodepth/](https://leewonjoon9868.github.io/MoRGS/)) | [Paper](https://arxiv.org/pdf/2407.09303)
+### [Project Page](https://leewonjoon9868.github.io/MoRGS/) | [Paper](https://arxiv.org/pdf/2407.09303)
 
-Official PyTorch implementation for the CVPR 2026 paper: "MoRGS: Efficient Per-Gaussian Motion Reasoning for Streamable Dynamic 3D Scenes". 
+Official PyTorch implementation for the CVPR 2026 paper: 
+
+"MoRGS: Efficient Per-Gaussian Motion Reasoning for Streamable Dynamic 3D Scenes". 
 
 ## 👀 Table of Contents
 - [Installation](#installation)
