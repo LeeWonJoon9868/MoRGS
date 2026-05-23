@@ -14,14 +14,19 @@ Official PyTorch implementation for the CVPR 2026 paper:
 
 ## ⚙️ Installation
 🔹 Environment Setup
-You can install the dependencies with:
+
+Our software has some submodules, please clone the repo recursively.
 ```
 git clone --recurse-submodules https://github.com/LeeWonJoon9868/MoRGS.git
 cd MoRGS
 mkdir data
 mkdir logs
 mkdir output
+```
 
+You can install the dependencies with:
+
+```
 conda create -n morgs python=3.11
 conda activate morgs
 pip install -e .
@@ -29,6 +34,7 @@ pip install --no-build-isolation ./submodules/simple-knn
 pip install --no-build-isolation ./submodules/diff-gaussian-rasterization
 pip install --no-build-isolation ./submodules/gaussian-rasterization-grad
 ```
+
 We ran out experiments with PyTorch 2.5.1, CUDA 12.1.
 
 🔹 Download weights for RAFT and SAM2.
