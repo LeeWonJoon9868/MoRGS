@@ -13,7 +13,7 @@ Official PyTorch implementation for the CVPR 2026 paper:
 - [Citation](#citation)
 
 ## ⚙️ Installation
-🔹 Environment Setup
+### Environment Setup
 
 Our software has some submodules, please clone the repo recursively.
 ```
@@ -37,11 +37,12 @@ pip install --no-build-isolation ./submodules/gaussian-rasterization-grad
 
 We ran out experiments with PyTorch 2.5.1, CUDA 12.1.
 
-🔹 Download weights for RAFT and SAM2.
+### Download weights for RAFT and SAM2.
 
-For RAFT, please download their pretrained weights Tartan-C-T-TSKH-spring540x960-M.pth from their official repo(https://github.com/princeton-vl/SEA-RAFT).
+For RAFT, please download their pretrained weights Tartan-C-T-TSKH-spring540x960-M.pth from their [official repo](https://github.com/princeton-vl/SEA-RAFT).
 
-For SAM2, please download their pretrained weights 1_hiera_large.pt from their official repo(https://github.com/facebookresearch/sam2).
+For SAM2, please download their pretrained weights 1_hiera_large.pt from their [official repo](https://github.com/facebookresearch/sam2).
+
 
 ## 💾 Data Preparation
 
@@ -98,12 +99,27 @@ Please see specific configuration files in configs for examples, and arguments/_
 </details>
 
 ## 📊 Rendering and Evaluation
-🔹 Rendering
+###  Rendering
 ```
 python render.py -s <path to scene> -m <path to trained model> # Generate renderings
 ```
-🔹 Evaluation
+###  Evaluation
 ```
 python metrics.py -m <path to trained model> # Compute error metrics on renderings
 ```
+## Acknowledgements
+Our work is partially based on these opening source work: [3DGS](https://github.com/graphdeco-inria/gaussian-splatting), [3DGStream](https://github.com/SJoJoK/3DGStream), [QUEEN](https://github.com/NVlabs/queen), [SEA-RAFT](https://github.com/princeton-vl/SEA-RAFT), [SAM2](https://github.com/facebookresearch/sam2).
 
+We appreciate the authors for their contributions.
+
+## ✏️ 📄 Citation
+If you find our work useful or interesting, please cite our paper:
+
+```
+@article{lee2026morgs,
+  title={MoRGS: Efficient Per-Gaussian Motion Reasoning for Streamable Dynamic 3D Scenes},
+  author={Lee, Wonjoon and Woo, Sungmin and Kim, Donghyeong and Lee, Jungho and Park, Sangheon and Lee, Sangyoun},
+  journal={arXiv preprint arXiv:2603.25042},
+  year={2026}
+}
+```
