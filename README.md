@@ -12,8 +12,8 @@ Official PyTorch implementation for the CVPR 2026 paper:
 - [Rendering and Evaluation](#render-evaluation)
 - [Citation](#citation)
 
-- ## ⚙️ Installation
-1. Environment Setup
+## ⚙️ Installation
+🔹 Environment Setup
 You can install the dependencies with:
 ```
 git clone --recurse-submodules https://github.com/LeeWonJoon9868/MoRGS.git
@@ -31,7 +31,7 @@ pip install --no-build-isolation ./submodules/gaussian-rasterization-grad
 ```
 We ran out experiments with PyTorch 2.5.1, CUDA 12.1.
 
-2. Download weights for RAFT and SAM2.
+🔹 Download weights for RAFT and SAM2.
 
 For RAFT, please download their pretrained weights Tartan-C-T-TSKH-spring540x960-M.pth from their official repo(https://github.com/princeton-vl/SEA-RAFT).
 
@@ -41,8 +41,6 @@ For SAM2, please download their pretrained weights 1_hiera_large.pt from their o
 
 We assume datasets are organized as follows:
 
-<details>
-<summary><span style="font-weight: bold;">DyNeRF</span></summary>
 
 ```
 | --- data
@@ -71,20 +69,18 @@ To generate the `points3D_downsample2.ply`, please use the [multipleviewprogress
 
 For more information on how datasets are loaded, please see `scene/dataset_readers.py`.
 
-</details>
-
 ## ⏳ Training
 You can train a scene by running:
 
-'''
+```
 python train.py --config [config_path] -s [source_path] -m [output_name]
-'''
+```
 
 For example:
 
-'''
+```
 python train.py --config configs/dynerf.yaml -s data/dynerf/coffee_martini -m ./output/dynerf/coffee_martini
-'''
+```
 
 Please see specific configuration files in configs for examples, and arguments/__init__.py for the full list of arguments.
 
@@ -94,3 +90,14 @@ Please see specific configuration files in configs for examples, and arguments/_
   #### --source_path / -s
   Path to the source directory containing a COLMAP or Synthetic NeRF data set.
 </details>
+
+## 📊 Rendering and Evaluation
+🔹 Rendering
+```
+python render.py -s <path to scene> -m <path to trained model> # Generate renderings
+```
+🔹 Evaluation
+```
+python metrics.py -m <path to trained model> # Compute error metrics on renderings
+```
+
