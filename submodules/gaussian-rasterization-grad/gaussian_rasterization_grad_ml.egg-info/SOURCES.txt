@@ -1,0 +1,12 @@
+LICENSE.md
+README.md
+ext.cpp
+rasterize_points.cu
+setup.py
+cuda_rasterizer/backward.cu
+cuda_rasterizer/forward.cu
+cuda_rasterizer/rasterizer_impl.cu
+gaussian_rasterization_grad_ml.egg-info/PKG-INFO
+gaussian_rasterization_grad_ml.egg-info/SOURCES.txt
+gaussian_rasterization_grad_ml.egg-info/dependency_links.txt
+gaussian_rasterization_grad_ml.egg-info/top_level.txt

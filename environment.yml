@@ -1,0 +1,36 @@
+name: morgs
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10.18
+  - pip=25.2
+  - pytorch=2.5.1
+  - torchvision=0.20.1
+  - torchaudio=2.5.1
+  - pytorch-cuda=12.1
+  - tqdm
+  - pip:
+    - plyfile==1.1.2
+    - numpy
+    - pillow
+    - opencv-python-headless
+    - scipy
+    - matplotlib
+    - wandb
+    - torchmetrics
+    - imutils
+    - torchac
+    - timm==0.6.13
+    - einops==0.6.0
+    - scikit-image
+    - hydra-core
+    - omegaconf
+    - iopath
+    - natsort
+    - --find-links https://data.pyg.org/whl/torch-2.5.1+cu121.html
+    - torch_cluster
+    - pyyaml
+    - huggingface-hub

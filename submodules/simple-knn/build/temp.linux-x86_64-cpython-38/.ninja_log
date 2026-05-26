@@ -1,0 +1,4 @@
+# ninja log v5
+0	7838	1754386500804421347	/SSD1/wonjoon/queen/submodules/simple-knn/build/temp.linux-x86_64-cpython-38/simple_knn.o	e1d341d758bb90f6
+0	9114	1754386502086439612	/SSD1/wonjoon/queen/submodules/simple-knn/build/temp.linux-x86_64-cpython-38/ext.o	dcfbbda8697ea942
+1	31591	1754386524555759817	/SSD1/wonjoon/queen/submodules/simple-knn/build/temp.linux-x86_64-cpython-38/spatial.o	9ceb9eb835d5317f

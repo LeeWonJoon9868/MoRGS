@@ -1,0 +1,4 @@
+# ninja log v5
+1	6577	1779522587588063152	/SSD1/WONJOON/MoRGS/submodules/simple-knn/build/temp.linux-x86_64-cpython-310/simple_knn.o	66c34895951505d9
+0	10590	1779522591602260028	/SSD1/WONJOON/MoRGS/submodules/simple-knn/build/temp.linux-x86_64-cpython-310/ext.o	510d7f5ee6219468
+1	34816	1779522615816448543	/SSD1/WONJOON/MoRGS/submodules/simple-knn/build/temp.linux-x86_64-cpython-310/spatial.o	87f6f1f362964a13
