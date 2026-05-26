@@ -19,29 +19,28 @@ Our software has some submodules, please clone the repo recursively.
 ```
 git clone --recurse-submodules https://github.com/LeeWonJoon9868/MoRGS.git
 cd MoRGS
-mkdir data
-mkdir logs
-mkdir output
+mkdir data logs output
 ```
 
-You can install the dependencies with:
+We tested with Python 3.10, PyTorch 2.5.1, CUDA 12.1, on a single NVIDIA RTX A5000.
 
 ```
-conda create -n morgs python=3.11
+conda create -n morgs python=3.10
 conda activate morgs
-pip install -e .
+conda env create -f environment.yml
 pip install --no-build-isolation ./submodules/simple-knn
 pip install --no-build-isolation ./submodules/diff-gaussian-rasterization
 pip install --no-build-isolation ./submodules/gaussian-rasterization-grad
 ```
 
-We ran out experiments with PyTorch 2.5.1, CUDA 12.1.
 
-### Download weights for RAFT and SAM2.
+### 3. Pretrained weights (RAFT + SAM2)
+| Component | Weight                                                   | Place at |
+|-----------|----------------------------------------------------------|----------|
+| SEA-RAFT  | `Tartan-C-T-TSKH-spring540x960-M.pth` from [SEA-RAFT](https://github.com/princeton-vl/SEA-RAFT) | `RAFT/models/` |
+| SAM 2     | `sam2.1_hiera_large.pt` from [SAM 2](https://github.com/facebookresearch/sam2)                  | `sam2/checkpoints/` |
 
-For RAFT, please download their pretrained weights Tartan-C-T-TSKH-spring540x960-M.pth from their [official repo](https://github.com/princeton-vl/SEA-RAFT).
-
-For SAM2, please download their pretrained weights 1_hiera_large.pt from their [official repo](https://github.com/facebookresearch/sam2).
+The default paths are configurable in [`configs/`](configs/) (`flow_model_ckpt`,`sam2_checkpoint`).
 
 
 ## 💾 Data Preparation
@@ -96,6 +95,20 @@ Please see specific configuration files in configs for examples, and arguments/_
 
   #### --source_path / -s
   Path to the source directory containing a COLMAP or Synthetic NeRF data set.
+
+  #### --model_path / -m
+  Path where the trained model should be stored.
+
+  #### --load_init
+  Skip initial-frame fit and load cached checkpoint.
+
+  #### --log_images
+  Flag to save rendered images during training.
+
+  #### --log_ply 
+  Flag to save point cloud in PLY format during training.
+
+
 </details>
 
 ## 📊 Rendering and Evaluation
@@ -105,8 +118,14 @@ python render.py -s <path to scene> -m <path to trained model> # Generate render
 ```
 ###  Evaluation
 ```
-python metrics.py -m <path to trained model> # Compute error metrics on renderings
+python metrics_video.py -m <path to trained model> # Compute error metrics on renderings
 ```
+
+###  Videos
+```
+python generate_video.py -m <path to trained model> 
+```
+
 ## Acknowledgements
 Our work is partially based on these opening source work: [3DGS](https://github.com/graphdeco-inria/gaussian-splatting), [3DGStream](https://github.com/SJoJoK/3DGStream), [QUEEN](https://github.com/NVlabs/queen), [SEA-RAFT](https://github.com/princeton-vl/SEA-RAFT), [SAM2](https://github.com/facebookresearch/sam2).
 
