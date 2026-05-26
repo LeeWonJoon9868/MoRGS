@@ -25,9 +25,8 @@ mkdir data logs output
 We tested with Python 3.10, PyTorch 2.5.1, CUDA 12.1, on a single NVIDIA RTX A5000.
 
 ```
-conda create -n morgs python=3.10
-conda activate morgs
 conda env create -f environment.yml
+conda activate morgs
 pip install --no-build-isolation ./submodules/simple-knn
 pip install --no-build-isolation ./submodules/diff-gaussian-rasterization
 pip install --no-build-isolation ./submodules/gaussian-rasterization-grad
